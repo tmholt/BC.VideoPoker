@@ -1,0 +1,361 @@
+﻿body {
+	background: #000;
+}
+
+button, .button {
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  line-height: 1;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  border-color: #888;
+  color: white; 
+}
+
+.backgroundrow {
+	position: relative;
+	background-image: url(../images/tablebg.jpg);
+	background-repeat: no-repeat;
+	width: 960px;
+	height: 640px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid #555;
+	padding: 0px;
+}
+
+.card {
+	cursor: pointer;
+}
+
+.topbuttonsrow {
+	margin-top: 18px;
+	margin-left: 18px;
+}
+
+.topbuttonsrow button {
+	margin-top: 0px;
+	height: 92px;
+	width: 298px;
+	font-family: 'Segoe UI', sans-serif;
+	color: #fff;
+	vertical-align: top;
+}
+
+#btnGameType {
+	background: #d55131;
+	font-weight: bolder;
+	font-size: 1.1em;
+	background-image: url(../images/btnbg-chip.png);
+	background-repeat: no-repeat;
+	background-position: left 8px top 8px;
+}
+
+#btnUser {
+	background: #31b5d5;
+	font-weight: 300;
+	font-size: 1.4em;
+	margin-left: 4px;
+	margin-right: 4px;
+	background-image: url(../images/btnbg-user.png);
+	background-repeat: no-repeat;
+	background-position: left 8px top 0px;
+}
+
+#btnBank {
+	background: #31d541;
+	font-size: 2em;
+	font-weight: bold;
+	background-image: url(../images/btnbg-moneybag.png);
+	background-repeat: no-repeat;
+	background-position: left 8px top 2px;
+}
+
+.cardsrow {
+	margin-top: 8px;
+	margin-left: 18px;
+	margin-right: 18px;
+}
+
+.card {
+	width: 180px;
+}
+
+.bottombuttonsrow {
+	margin-top: 8px;
+	margin-left: 18px;
+	position: relative;
+}
+
+.bottombuttonsrow button {
+	height: 144px;
+	font-family: 'Segoe UI', sans-serif;
+	color: #fff;
+	vertical-align: top;
+}
+
+#btnDeal {
+	margin-top: 0px;
+	background: #d55131;
+	font-size: 3.5em;
+	font-weight: lighter;
+	width: 208px;
+}
+
+#btnResults {
+	font-size: 1.8em;
+	background: #31b5d5;
+	width: 462px;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+.commentStateDiv {
+	font-size: 1.2em;
+	color: #888;
+}
+
+.errorStateDiv {
+	color: #f88;
+}
+
+#btnBet {
+	background: #31d541;
+	font-size: 2.2em;
+	font-weight: bold;
+	width: 160px;
+}
+
+.betchangediv {
+	height: 144px;
+}
+
+#btnBetPlus {
+	position: absolute;
+	top: 0px;
+	left: 850px;
+	height: 70px;
+	background: #31d541;
+	font-size: 2.8em;
+	font-weight: bold;
+	width: 60px;
+}
+
+#btnBetMinus {
+	position: absolute;
+	top: 74px;
+	left: 850px;
+	height: 70px;
+	background: #31d541;
+	font-size: 2.8em;
+	font-weight: bold;
+	width: 60px;
+}
+
+#popupGameSelector {
+	display: none;
+	position: absolute;
+	top: 0px;
+	left: 18px;
+	width: 298px;
+	background: #444;
+	padding: 8px;
+	width: auto;
+	margin: 8px auto;
+}
+
+.popupTitle {
+	background: #666;
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 1.6em;
+	color: #fff;
+	border: 1px solid white;
+	height: 50px;
+	text-align: center;
+	padding-top: 12px;
+}
+
+#popupGameSelector button {
+	margin-top: 0px;
+	height: 42px;
+	width: 298px;
+	font-family: 'Segoe UI', sans-serif;
+	color: #fff;
+	vertical-align: top;
+	background: #d55131;
+	font-weight: bolder;
+	font-size: 1.1em;
+}
+
+#popupWaitCursor {
+	display: none;
+	position: absolute;
+	top: 15%;
+	left: 35%;
+	width: 401px;
+	height: 401px;
+	z-index: 9;
+}
+
+#popupLogin, #popupAccount {
+	position: absolute;
+	top: 18px;
+	left: 18px;
+	width: 794px;
+	height: 414px;
+	z-index: 8;
+	background: #ddd;
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	border: 2px solid black;
+	font-family: 'Segoe UI', sans-serif;
+	margin: 0px;
+}
+
+#popupAccount {
+	top: 12px;
+	display: none;
+	z-index: 9;
+	padding-top: 0px;
+	padding-bottom: 10px;
+	height: 600px;
+}
+
+.popupButtonDiv {
+	background: #ccc;
+	text-wrap: none;
+	padding: 12px 24px 12px 24px;
+}
+
+#popupLogin h1, #popupAccount h1 {
+	margin-top: 0px;
+	font-size: 2.5em;
+	background: #ccc;
+	padding: 12px;
+	text-align: center;
+}
+
+#popupAccount table {
+	margin-left: 36px;
+}
+
+#popupLogin table {
+	margin-left: 36px;
+}
+
+#popupLogin label, #popupAccount label {
+	font-size: 1.5em;
+	color: #666;
+}
+
+#popupLogin input, #popupAccount input {
+	font-size: 1.5em;
+	padding: 8px;
+	margin-bottom: 12px;
+	margin-left: 24px;
+	width: 325px;
+}
+
+#popupLogin button {
+	font-size: 1.25em;
+	background: #31b5d5;
+	padding: 12px 24px 12px 24px;
+	margin-right: 12px;
+}
+
+#popupAccount button {
+	font-size: 1.25em;
+	background: #31b5d5;
+	padding: 12px 24px 12px 24px;
+	margin-right: 12px;
+}
+
+
+
+
+.GamePayoff tr {
+	line-height: 18px;
+}
+
+.GamePayoff td {
+	margin-left: 12px;
+}
+
+.GamePayoffTitle {
+	text-align: center;
+	font-size: 0.6em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.GamePayoffHeader {
+	text-align: left;
+	font-size: 0.5em;
+	font-weight: normal;
+	color: #fff;
+	white-space:nowrap;
+}
+
+.GamePayoffAmount {
+	font-size: 0.6em;
+	font-weight: bold;
+	color: #8f8;
+}
+
+.HelpText {
+	text-align: left;
+	font-size: 0.6em;
+	font-weight: normal;
+	margin-left: 8px;
+}
+
+.HelpText h3 {
+	padding-top: 2px;
+	margin-top: 0px;
+	margin-left: 8px;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.inputErrorState {
+	border-color: red;
+	border-width: 2px;
+}
+
+.errorLabel {
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 1.25em;
+	color: red;
+	font-weight: bolder;
+	padding-top: 8px;
+	padding-left: 12px;
+}
+
+.GameStats th {
+	font-size: 0.5em;
+	font-weight: bolder;
+	padding-right: 18px;
+	text-align: left;
+	text-wrap: none;
+}
+
+.GameStats .GamePayoffTitle {
+	text-align: center;
+	font-size: 0.7em;
+	padding-bottom: 12px;
+}
+
+.GameStats td {
+	font-size: 0.5em;
+	font-weight: normal;
+	text-align: left;
+	margin-right: 24px;
+	padding-right: 46px;
+}
+
+
+
+

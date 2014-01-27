@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width"/>
+    <title>BC.VideoPoker</title>
+
+	<link rel="stylesheet" href="css/vp.css"/>
+
+	<script src="js/jquery.js" type="text/javascript"></script>
+	<script src="js/jquery.cookie.js" type="text/javascript"></script>
+
+	<script src="js/knockout-3.0.0.js" type="text/javascript"></script>
+
+
+	<script src="js/vp.vm.GameInfo.js" type="text/javascript"></script>
+	<script src="js/vp.vm.UserInfo.js" type="text/javascript"></script>
+	<script src="js/vp.vm.CardInfo.js" type="text/javascript"></script>
+	<script src="js/vp.vm.PlayStats.js" type="text/javascript"></script>
+	<script src="js/vp.js" type="text/javascript"></script>
+	<script src="js/vphelp.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+
+			jQuery.support.cors = true; // allow cross-site scripting
+
+			// startup for zurb foundation
+			//$(document).foundation();
+
+			// get the list of available games. Then look up the last
+			// played game (if available). Either set that to active
+			// or just the first one in the list.
+			CallGetAvailablePokerGames(function (results) {
+				SetupAvailableGames(results);
+			});
+
+			SetInitialCardState();
+		});
+
+
+	</script>
+
+</head>
+<body>
+
+	<div class="backgroundrow">
+
+
+		<!-- wait popup -->
+		<div id="popupWaitCursor">
+			<img src="images/stopwatch.png" width="401" height="401" alt="Waiting"/>
+		</div>
+
+		<!-- popup for selecting the active game type -->
+		<div id="popupGameSelector">
+			<div class="popupTitle" id="popupGameSelectorTitle">
+				Select Game
+			</div>
+		</div>
+		<!-- end game type popup -->
+
+
+		<!-- login popup -->
+		<div id="popupLogin">
+			<h1>BC.VideoPoker Login</h1>
+			<table>
+				<tr>
+					<td valign="top"><label for="txtLoginName">Nickname:</label></td>
+					<td></td>
+					<td><input type="text" id="txtLoginName" name="txtLoginName" /></td>
+				</tr>
+				<tr>
+					<td valign="top"><label for="txtLoginPassword">Password:</label></td>
+					<td></td>
+					<td><input type="password" id="txtLoginPassword" name="txtLoginPassword" /></td>
+				</tr>
+			</table>
+			<br />
+			<div class="popupButtonDiv">
+				<button id="btnLoginSubmit" onclick="btnLoginSubmit_OnClick()">LOGIN</button>
+				<button id="btnLoginCreate" onclick="btnLoginCreate_OnClick()">Create New Account</button>
+			</div>
+			<div id="loginErrorLabel" class="errorLabel"></div>
+		</div>
+		<!-- end login popup -->
+
+		<!-- create account popup -->
+		<div id="popupAccount">
+			<h1 id="popupAccountTitle">Create New User Account</h1>
+			<table>
+				<tr>
+					<td valign="top"><label for="txtAccountFirst">First Name:</label></td>
+					<td></td>
+					<td><input type="text" id="txtAccountFirst" name="txtAccountFirst" /></td>
+				</tr>
+				<tr>
+					<td valign="top"><label for="txtAccountLast">Last Name:</label></td>
+					<td></td>
+					<td><input type="text" id="txtAccountLast" name="txtAccountLast" /></td>
+				</tr>
+				<tr>
+					<td valign="top"><label for="txtAccountNickname">Nickname:</label></td>
+					<td></td>
+					<td><input type="text" id="txtAccountNickname" name="txtAccountNickname" /></td>
+				</tr>
+				<tr>
+					<td valign="top"><label for="txtAccountEmail">Email:</label></td>
+					<td></td>
+					<td><input type="text" id="txtAccountEmail" name="txtAccountEmail" /></td>
+				</tr>
+				<tr>
+					<td valign="top"><label for="txtAccountPassword1">Password:</label></td>
+					<td></td>
+					<td><input type="password" id="txtAccountPassword1" name="txtAccountPassword1" /></td>
+				</tr>
+				<tr>
+					<td valign="top"><label for="txtAccountPassword2">Password:</label></td>
+					<td></td>
+					<td><input type="password" id="txtAccountPassword2" name="txtAccountPassword2" /></td>
+				</tr>
+
+			</table>
+			<br />
+			<div class="popupButtonDiv">
+				<button id="btnAccountSubmit" onclick="btnAccountSubmit_OnClick()">CREATE</button>
+				<button id="btnAccountCancel" onclick="btnAccountCancel_OnClick()">CANCEL</button>
+				<button id="btnAccountLogout" onclick="btnAccountLogout_OnClick()">LOG OUT</button>
+			</div>
+			<div id="accountErrorLabel" class="errorLabel"></div>
+		</div>
+		<!-- end create account popup -->
+
+
+		<div class="topbuttonsrow">
+			<button id="btnGameType" onclick="btnGameType_OnClick()">2 Draw<br />Jacks or Better</button>
+			<button id="btnUser" onclick="btnUser_OnClick()">Tom Holt</button>
+			<button id="btnBank" onclick="btnBank_OnClick()">$552.00</button>
+		</div>
+
+		<div class="cardsrow">
+			<img class="card" src="images/Cards/BackRed.png" id="card1"/>
+			<img class="card" src="images/Cards/BackRed.png" id="card2"/>
+			<img class="card" src="images/Cards/BackRed.png" id="card3"/>
+			<img class="card" src="images/Cards/BackRed.png" id="card4"/>
+			<img class="card" src="images/Cards/BackRed.png" id="card5"/>
+		</div>
+
+		<div class="bottombuttonsrow">
+			<button id="btnDeal" onclick="btnDeal_OnClick()">DEAL</button>
+			<button id="btnResults" onclick="btnResults_OnClick()">These are the results</button>
+			<button id="btnBet" onclick="btnBet_OnClick()">$2.00</button>
+			<button id="btnBetPlus" onclick="btnBetPlus_OnClick()">+</button>
+			<button id="btnBetMinus" onclick="btnBetMinus_OnClick()">-</button>
+		</div>
+
+
+	</div>
+
+
+</body>
+</html>
+
