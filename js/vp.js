@@ -5,6 +5,9 @@
 // NOTE: haven't really abstracted away where this could change
 var HANDCARDS = 5;
 var DEFAULT_BET_AMOUNT = 2.00;
+
+var PATH_TO_CARDS = "./images/cards/";
+
 //var BASEURL = "http://localhost/BC.VideoPoker"; // base url for making server calls local = ".."
 var BASEURL = "http://bengalcore.azurewebsites.net";
 
@@ -960,9 +963,9 @@ function ReplaceRequested() {
 function ShowCard(card, index) {
 	var cardid = "#card" + index;
 
-	var imgsrc = "./images/cards/" + card.ResFile;
+	var imgsrc = PATH_TO_CARDS + card.ResFile;
 	if ( card.MarkedForDiscard ) {
-		imgsrc = "./images/cards/BackRed.png";
+		imgsrc = PATH_TO_CARDS + "BackRed.png";
 	}
 	$(cardid).attr("src", imgsrc);
 }
@@ -1084,7 +1087,7 @@ function Format2Digits(value) {
 // set all the cards to the back card
 ///////////////////////////////////////////////////////////////////////////////
 function SetCardsToBack() {
-	$(".card").attr("src", "./images/cards/BackRed.png");
+	$(".card").attr("src", PATH_TO_CARDS + "BackRed.png");
 	$(".card").css("cursor", "default");
 }
 
