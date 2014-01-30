@@ -1,21 +1,19 @@
-body {
+﻿body {
 	background: #000;
+	margin: 0px;
 }
 
-
 .backgroundrow {
-	position: relative;
 	/*
 	background-image: url(../images/tablebg.jpg);
 	background-repeat: no-repeat;
-	 */
-	width: 97%;
 	border: 1px solid #555;
-	padding: 12px;
-	margin: 4px;
+	 */
+	padding: 16px;
+	margin: 0px;
 }
 
-button {
+button, .button {
   border-style: solid;
   border-width: 1px;
   cursor: pointer;
@@ -32,7 +30,7 @@ button {
 
 .topbuttonsrow button {
 	height: 92px;
-	width: 32%;
+	width: 298px;
 	font-family: 'Segoe UI', sans-serif;
 	color: #fff;
 	vertical-align: top;
@@ -73,7 +71,7 @@ button {
 
 .card {
 	cursor: pointer;
-	width: 19%;
+	width: 177px;
 	margin-right: 3px;
 }
 
@@ -90,17 +88,17 @@ button {
 }
 
 #btnDeal {
+	margin-right: 3px;
 	background: #d55131;
 	font-size: 3.2em;
 	font-weight: lighter;
-	width: 20%;
-	margin-right: 3px;
+	width: 208px;
 }
 
 #btnResults {
-	background: #31b5d5;
 	font-size: 1.8em;
-	width: 52%;
+	background: #31b5d5;
+	width: 462px;
 	margin-right: 3px;
 }
 
@@ -108,29 +106,29 @@ button {
 	background: #31d541;
 	font-size: 2.2em;
 	font-weight: bold;
-	width: 16.9%;
+	width: 160px;
 }
 
 #btnBetPlus {
 	position: absolute;
 	top: 0px;
-	left: 91%;
+	left: 850px;
+	width: 60px;
 	height: 70px;
 	background: #31d541;
-	font-size: 2.8em;
+	font-size: 3.5em;
 	font-weight: bold;
-	width: 7%;
 }
 
 #btnBetMinus {
 	position: absolute;
 	top: 74px;
-	left: 91%;
+	left: 850px;
+	width: 60px;
 	height: 70px;
 	background: #31d541;
-	font-size: 2.8em;
+	font-size: 3.5em;
 	font-weight: bold;
-	width: 7%;
 }
 
 .commentStateDiv {
@@ -142,9 +140,16 @@ button {
 	color: #f88;
 }
 
+
+
+.betchangediv {
+	height: 144px;
+}
+
 #popupGameSelector {
 	display: none;
 	position: absolute;
+	z-index: 7;
 	top: 0px;
 	left: 18px;
 	width: 298px;
@@ -191,8 +196,7 @@ button {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	width: 95%;
-	z-index: 8;
+	z-index: 7;
 	background: #ddd;
 	margin: 12px;
 	padding: 5px;
@@ -220,11 +224,11 @@ button {
 }
 
 #popupAccount table {
-	margin-left: 36px;
+	margin-left: 10%;
 }
 
 #popupLogin table {
-	margin-left: 36px;
+	margin-left: 10%;
 }
 
 #popupLogin label, #popupAccount label {
@@ -237,7 +241,8 @@ button {
 	padding: 8px;
 	margin-bottom: 12px;
 	margin-left: 24px;
-	width: 100%;
+	margin-right: 24px;
+	min-width: 100px;
 }
 
 #popupLogin button {
@@ -254,9 +259,22 @@ button {
 	margin-right: 12px;
 }
 
+/* error message at bottom of popups */
+.errorLabel {
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 1.25em;
+	color: red;
+	font-weight: bolder;
+	padding-top: 8px;
+	padding-left: 12px;
+}
 
+.inputErrorState {
+	border-color: red;
+	border-width: 2px;
+}
 
-
+/* help */
 .GamePayoff tr {
 	line-height: 18px;
 }
@@ -299,20 +317,6 @@ button {
 	margin-left: 8px;
 	font-size: 1em;
 	font-weight: bold;
-}
-
-.inputErrorState {
-	border-color: red;
-	border-width: 2px;
-}
-
-.errorLabel {
-	font-family: 'Segoe UI', sans-serif;
-	font-size: 1.25em;
-	color: red;
-	font-weight: bolder;
-	padding-top: 8px;
-	padding-left: 12px;
 }
 
 .GameStats th {

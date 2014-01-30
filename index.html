@@ -26,8 +26,9 @@
 
 			jQuery.support.cors = true; // allow cross-site scripting
 
-			// startup for zurb foundation
-			//$(document).foundation();
+			// set up manual resizing
+			$(window).resize(Resize);
+			Resize();
 
 			// get the list of available games. Then look up the last
 			// played game (if available). Either set that to active
@@ -69,12 +70,12 @@
 				<tr>
 					<td valign="top"><label for="txtLoginName">Nickname:</label></td>
 					<td></td>
-					<td><input type="text" id="txtLoginName" name="txtLoginName" /></td>
+					<td><input class="popupInput" type="text" id="txtLoginName" name="txtLoginName" /></td>
 				</tr>
 				<tr>
 					<td valign="top"><label for="txtLoginPassword">Password:</label></td>
 					<td></td>
-					<td><input type="password" id="txtLoginPassword" name="txtLoginPassword" /></td>
+					<td><input class="popupInput" type="password" id="txtLoginPassword" name="txtLoginPassword" /></td>
 				</tr>
 			</table>
 			<br />
@@ -93,32 +94,32 @@
 				<tr>
 					<td valign="top"><label for="txtAccountFirst">First Name:</label></td>
 					<td></td>
-					<td><input type="text" id="txtAccountFirst" name="txtAccountFirst" /></td>
+					<td><input class="popupInput" type="text" id="txtAccountFirst" name="txtAccountFirst" /></td>
 				</tr>
 				<tr>
 					<td valign="top"><label for="txtAccountLast">Last Name:</label></td>
 					<td></td>
-					<td><input type="text" id="txtAccountLast" name="txtAccountLast" /></td>
+					<td><input class="popupInput" type="text" id="txtAccountLast" name="txtAccountLast" /></td>
 				</tr>
 				<tr>
 					<td valign="top"><label for="txtAccountNickname">Nickname:</label></td>
 					<td></td>
-					<td><input type="text" id="txtAccountNickname" name="txtAccountNickname" /></td>
+					<td><input class="popupInput" type="text" id="txtAccountNickname" name="txtAccountNickname" /></td>
 				</tr>
 				<tr>
 					<td valign="top"><label for="txtAccountEmail">Email:</label></td>
 					<td></td>
-					<td><input type="text" id="txtAccountEmail" name="txtAccountEmail" /></td>
+					<td><input class="popupInput" type="text" id="txtAccountEmail" name="txtAccountEmail" /></td>
 				</tr>
 				<tr>
 					<td valign="top"><label for="txtAccountPassword1">Password:</label></td>
 					<td></td>
-					<td><input type="password" id="txtAccountPassword1" name="txtAccountPassword1" /></td>
+					<td><input class="popupInput" type="password" id="txtAccountPassword1" name="txtAccountPassword1" /></td>
 				</tr>
 				<tr>
 					<td valign="top"><label for="txtAccountPassword2">Password:</label></td>
 					<td></td>
-					<td><input type="password" id="txtAccountPassword2" name="txtAccountPassword2" /></td>
+					<td><input class="popupInput" type="password" id="txtAccountPassword2" name="txtAccountPassword2" /></td>
 				</tr>
 
 			</table>

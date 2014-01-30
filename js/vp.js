@@ -1123,3 +1123,67 @@ function SetInitialCardState() {
 	CheckForExistingUser();
 
 }
+
+///////////////////////////////////////////////////////////////////////////////
+// Resize all of our controls based on the current screen size
+///////////////////////////////////////////////////////////////////////////////
+function Resize() {
+	var wwidth = $(window).width();
+	var wheight = $(window).height();
+
+	// top 3 buttons
+	var topBtnWidth = (wwidth - 104) / 3;
+	var topBtnHeight = wheight / 7;
+	$(".topbuttonsrow button").width(topBtnWidth);
+	$(".topbuttonsrow button").height(topBtnHeight);
+
+	// cards
+	var cardWidth = (wwidth - 64) / 5;
+	$(".card").width(cardWidth);
+
+	// bottom buttons. these are not all the same size
+	var btmBtnHeight = wheight / 4;
+	var btnDealWidth = wwidth / 5;
+	var btnBetWidth = wwidth / 7;
+	var btnResultsWidth = wwidth - btnDealWidth - btnBetWidth - 188;
+	var btnPlusLeft = btnDealWidth + btnResultsWidth + btnBetWidth + 71;
+	var btnPlusHeight = btmBtnHeight/2 - 4;
+
+	$("#btnDeal").width(btnDealWidth);
+	$("#btnDeal").height(btmBtnHeight);
+
+	$("#btnResults").width(btnResultsWidth);
+	$("#btnResults").height(btmBtnHeight);
+
+	$("#btnBet").width(btnBetWidth);
+	$("#btnBet").height(btmBtnHeight);
+
+
+	$("#btnBetPlus").css("left", btnPlusLeft);
+	$("#btnBetPlus").width(60);
+	$("#btnBetPlus").height(btnPlusHeight);
+
+	$("#btnBetMinus").css("top", btnPlusHeight + 8);
+	$("#btnBetMinus").css("left", btnPlusLeft);
+	$("#btnBetMinus").width(60);
+	$("#btnBetMinus").height(btnPlusHeight);
+
+	// now scale the font sizes
+	var dealFontSize = btnDealWidth/50;
+	$("#btnDeal").css("font-size", dealFontSize + "em");
+
+	var betFontSize = btnBetWidth / 50;
+	$("#btnBet").css("font-size", betFontSize + "em");
+
+	var bankFontSize = topBtnWidth / 85;
+	$("#btnBank").css("font-size", bankFontSize + "em");
+
+	// login/account popup
+	$(".popupInput").width(wwidth / 2);
+
+	$("#popupLogin h1").css("font-size", dealFontSize + "em");
+	$("#popupAccount h1").css("font-size", dealFontSize + "em");
+	
+
+
+}
